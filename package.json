@@ -14,7 +14,8 @@
     "src/index.ts",
     "src/sleep.ts",
     "src/copy.ts",
-    "src/clone.ts"
+    "src/clone.ts",
+    "src/validation.ts"
   ],
   "scripts": {
     "start": "tsdx watch",
