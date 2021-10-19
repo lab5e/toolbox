@@ -1,0 +1,57 @@
+{
+  "name": "@lab5e/toolbox",
+  "version": "0.1.0",
+  "description": "A little toolbox containing several utility functions",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build --format cjs,esm,umd --name toolbox -i src/index.ts",
+    "test": "tsdx lint src && tsdx test",
+    "test:watch": "tsdx test --watch",
+    "test:coverage": "tsdx test --coverage",
+    "doc": "typedoc --out docs --theme minimal src/index.ts --exclude \"**/*.spec.ts\" --readme DOC.md",
+    "lint": "tsdx lint",
+    "prepare": "npm run build",
+    "size": "size-limit",
+    "analyze": "size-limit --why"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "keywords": [
+    "lab5e",
+    "utility"
+  ],
+  "author": "Per Kristian Kummermo",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=10"
+  },
+  "devDependencies": {
+    "@size-limit/preset-small-lib": "^6.0.3",
+    "husky": "^7.0.2",
+    "np": "^7.5.0",
+    "size-limit": "^6.0.3",
+    "ts-jest": "^27.0.7",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typedoc": "^0.22.6",
+    "typescript": "^4.4.4"
+  },
+  "size-limit": [
+    {
+      "path": "dist/toolbox.cjs.production.min.js",
+      "limit": "500 B"
+    },
+    {
+      "path": "dist/toolbox.esm.js",
+      "limit": "500 B"
+    },
+    {
+      "path": "dist/toolbox.umd.production.min.js",
+      "limit": "500 B"
+    }
+  ]
+}
