@@ -13,7 +13,8 @@
     "dist",
     "src/index.ts",
     "src/sleep.ts",
-    "src/copy.ts"
+    "src/copy.ts",
+    "src/clone.ts"
   ],
   "scripts": {
     "start": "tsdx watch",
