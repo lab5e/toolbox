@@ -12,4 +12,8 @@ describe("Index", () => {
   it("should expose clone", () => {
     expect(index["deepClone"]).toBeDefined();
   });
+
+  it("should expose validation", () => {
+    expect(index["validation"]).toBeDefined();
+  });
 });
