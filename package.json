@@ -2,7 +2,19 @@
   "name": "@lab5e/toolbox",
   "version": "0.1.0",
   "description": "A little toolbox containing several utility functions",
-  "main": "index.js",
+  "repository": "lab5e/toolbox",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/toolbox.umd.production.min.js",
+  "module": "dist/toolbox.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/index.ts",
+    "src/sleep.ts",
+    "src/copy.ts"
+  ],
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build --format cjs,esm,umd --name toolbox -i src/index.ts",
