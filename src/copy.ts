@@ -4,7 +4,7 @@
  * @param copyText Text to be copied to the clipboard
  * @returns A promise which follows the success of the copy
  */
-export const copyToClipBoard = (copyText: string): Promise<void> => {
+export const copyToClipboard = (copyText: string): Promise<void> => {
   return new Promise((res, rej) => {
     /**
      * The best way of doing it if possible

@@ -1,4 +1,4 @@
-import { copyToClipBoard } from "./copy";
+import { copyToClipboard } from "./copy";
 
 describe("Copy", () => {
   it("should use the clipboard if available", (done) => {
@@ -8,7 +8,7 @@ describe("Copy", () => {
       },
     });
 
-    copyToClipBoard("Copy text").then(() => {
+    copyToClipboard("Copy text").then(() => {
       done();
     });
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith("Copy text");
@@ -22,7 +22,7 @@ describe("Copy", () => {
       execCommand: jest.fn(),
     });
 
-    copyToClipBoard("Copy text").then(() => {
+    copyToClipboard("Copy text").then(() => {
       expect(document.execCommand).toHaveBeenCalledWith("copy");
       done();
     });

@@ -2,7 +2,7 @@ import * as index from "./index";
 
 describe("Index", () => {
   it("should expose copy", () => {
-    expect(index["copyToClipBoard"]).toBeDefined();
+    expect(index["copyToClipboard"]).toBeDefined();
   });
 
   it("should expose sleep", () => {
