@@ -10,6 +10,28 @@ Simple toolbox 🧰 to keep our utility functions that we scatter across several
 
 ## Available tools
 
+## Validation
+
+A simple, yet comprehensive Validation tool which gives you both validation rules and a `Validation` class to play with. You can either use the validation rules directly or create a curried Validation class that can be reused.
+
+```ts
+import { validation } from "@lab5e/toolbox";
+
+const value = "5";
+
+const validation = validation
+  .initValidation()
+  .min(0)
+  .max(10)
+  .validate(value);
+
+if (value === true) {
+  console.log("Yay, our number is between 0 and 10");
+} else {
+  console.log(`Validation failed. Message. ${validation}`);
+}
+```
+
 ## CopyToClipboard
 
 A simple promisified version to copy some text to the user clipboard.
