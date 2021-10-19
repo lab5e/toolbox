@@ -4,4 +4,4 @@
  * @param ms Number of milliseconds to sleep
  * @returns A promise that is resolved after given number of milliseconds
  */
-export const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+export const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
