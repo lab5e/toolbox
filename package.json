@@ -9,7 +9,7 @@
     "test": "tsdx lint src && tsdx test",
     "test:watch": "tsdx test --watch",
     "test:coverage": "tsdx test --coverage",
-    "doc": "typedoc --out docs --theme minimal src/index.ts --exclude \"**/*.spec.ts\" --readme DOC.md",
+    "doc": "typedoc --out docs src/index.ts --exclude \"**/*.spec.ts\" --readme DOC.md",
     "lint": "tsdx lint",
     "prepare": "npm run build",
     "size": "size-limit",
