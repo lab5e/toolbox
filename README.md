@@ -5,8 +5,8 @@ Simple toolbox 🧰 to keep our utility functions that we scatter across several
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Documentation](https://img.shields.io/badge/docs-tsdoc-blue.svg)](https://lab5e.github.io/toolbox)
 [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/@lab5e/toolbox.svg)](#tiny)
-[![loadabledata](https://img.shields.io/npm/v/@lab5e/toolbox.svg)](https://www.npmjs.com/package/@lab5e/toolbox)
-[![CI](https://github.com/lab5e/loadabledata/actions/workflows/main.yml/badge.svg)](https://github.com/lab5e/loadabledata/actions/workflows/main.yml)
+[![toolbox](https://img.shields.io/npm/v/@lab5e/toolbox.svg)](https://www.npmjs.com/package/@lab5e/toolbox)
+[![CI](https://github.com/lab5e/toolbox/actions/workflows/main.yml/badge.svg)](https://github.com/lab5e/toolbox/actions/workflows/main.yml)
 
 ## Available tools
 
