@@ -11,7 +11,7 @@ import Vue, { VueConstructor } from "vue";
  *
  * @param args The mixins to use for the Vue instance
  */
-export default function mixins<T extends VueConstructor[]>(
+export function mixins<T extends VueConstructor[]>(
   ...args: T
 ): ExtractVue<T> extends infer V ? (V extends Vue ? VueConstructor<V> : never) : never;
 export default function mixins<T extends Vue>(...args: VueConstructor[]): VueConstructor<T>;
