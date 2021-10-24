@@ -1,4 +1,6 @@
 const replace = require("@rollup/plugin-replace");
+const vue = require("rollup-plugin-vue");
+const scss = require("rollup-plugin-scss");
 
 module.exports = {
   // This function will run for each entry/format/env combination
@@ -11,6 +13,11 @@ module.exports = {
           })
         : p,
     );
+
+    config.external = ["vuetify", "vue"];
+    config.plugins.push(vue());
+    config.plugins.push(scss());
+
     return config; // always return a config.
   },
 };
