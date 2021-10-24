@@ -15,7 +15,12 @@
     "src/sleep.ts",
     "src/copy.ts",
     "src/clone.ts",
-    "src/validation.ts"
+    "src/validation.ts",
+    "src/vue/dialogMixin.ts",
+    "src/vue/eventBus.ts",
+    "src/vue/vueMixin.ts",
+    "src/vuetify/ConfirmDialog.vue",
+    "src/vuetify/dialog.ts"
   ],
   "scripts": {
     "start": "tsdx watch",
