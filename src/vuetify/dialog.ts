@@ -5,21 +5,68 @@ import Vuetify from "vuetify";
 import { IDialogResult } from "../vue/dialogMixin";
 import { deepClone } from "../clone";
 
-const DEFAULT_VUETIFY = new Vuetify();
+let DEFAULT_VUETIFY = new Vuetify();
 
+/**
+ * Set the vuetify instance to be used as default on the dialogs
+ *
+ * @param vuetify The Vuetify instance to be used as default for dialogs
+ */
+export const setDefaultVuetify = (vuetify: Vuetify) => {
+  DEFAULT_VUETIFY = vuetify;
+};
+
+/**
+ * Config object for ConfirmDialog
+ */
 export interface IConfirmDialog {
+  /**
+   * Optional: Title of confirm dialog
+   */
   title?: string;
+  /**
+   * Optional: Message within the confirm dialog
+   */
   message?: string;
+  /**
+   * Optional: The text to be in the confirm button
+   */
   confirmText?: string;
+  /**
+   * Optional: The text to be in the cancel button
+   */
   cancelText?: string;
+  /**
+   * Optional: Confirmfunction to be run when the user clicks confirm. This function
+   * is awaited so if you provide a promise, the button will load until the promise
+   * fulfills. If the promise fails, the confirm dialog will not close.
+   */
   confirmFunction?: () => void;
+  /**
+   * Optional: Specific vuetify instance to provide for the ConfirmDialog
+   */
   vuetify?: Vuetify;
 }
 
+/**
+ * Config object for openDialog
+ */
 export interface IDialog {
+  /**
+   * A Vue instance that implements the DialogMixin
+   */
   dialog: VueConstructor<Vue>;
+  /**
+   * Optional: Properties to pass to the dialog instance. Will be deepCloned
+   */
   properties?: Record<string, unknown>;
+  /**
+   * Optional: Parent where to mount the dialog
+   */
   parent?: HTMLElement;
+  /**
+   * Optional: Specific vuetify instance to provide for the ConfirmDialog
+   */
   vuetify?: Vuetify;
 }
 
