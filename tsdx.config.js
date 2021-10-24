@@ -15,6 +15,15 @@ module.exports = {
     );
 
     config.external = ["vuetify", "vue"];
+    config.output = {
+      ...config.output,
+      ...{
+        globals: {
+          vuetify: "vuetify",
+          vue: "vue",
+        },
+      },
+    };
     config.plugins.push(vue());
     config.plugins.push(scss());
 
