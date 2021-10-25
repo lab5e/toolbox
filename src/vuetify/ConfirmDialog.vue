@@ -3,7 +3,7 @@
     <v-card class="d-flex flex-column">
       <v-card-title class="text-h5">{{ dialog.title }}</v-card-title>
       <v-card-text
-        ><p class="preline">{{ dialog.message }}</p></v-card-text
+        ><p style="white-space: pre-line;">{{ dialog.message }}</p></v-card-text
       >
       <v-card-actions
         ><v-spacer></v-spacer><v-btn text @click="cancel()">{{ dialog.cancelText }}</v-btn
@@ -14,12 +14,6 @@
     </v-card>
   </v-dialog>
 </template>
-
-<style scoped lang="css">
-.preline {
-  white-space: pre-line;
-}
-</style>
 
 <script lang="ts">
 import Vue from "vue";

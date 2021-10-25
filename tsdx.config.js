@@ -24,7 +24,15 @@ module.exports = {
         },
       },
     };
-    config.plugins.push(vue());
+    config.plugins.push(
+      vue({
+        css: true,
+        compileTemplate: true, // Explicitly convert template to render function
+        template: {
+          isProduction: true,
+        },
+      }),
+    );
     config.plugins.push(scss());
 
     return config; // always return a config.
