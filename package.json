@@ -20,7 +20,8 @@
     "src/vue/eventBus.ts",
     "src/vue/vueMixin.ts",
     "src/vuetify/ConfirmDialog.vue",
-    "src/vuetify/dialog.ts"
+    "src/vuetify/dialog.ts",
+    "src/vuetify/form.ts"
   ],
   "scripts": {
     "start": "tsdx watch",
