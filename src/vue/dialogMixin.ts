@@ -15,7 +15,7 @@ export interface IDialogResult<T> {
   payload?: T;
 }
 
-export default Vue.extend({
+export const DialogMixin = Vue.extend({
   props: {
     active: {
       type: Boolean,
