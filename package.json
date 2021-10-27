@@ -6,26 +6,19 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/toolbox.umd.production.min.js",
-  "module": "dist/toolbox.esm.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/ts/main.js",
+  "types": "dist/ts/index.d.ts",
+  "browser": "dist/browser.min.js",
   "files": [
-    "dist",
-    "src/index.ts",
-    "src/sleep.ts",
-    "src/copy.ts",
-    "src/clone.ts",
-    "src/validation.ts",
-    "src/vue/dialogMixin.ts",
-    "src/vue/eventBus.ts",
-    "src/vue/vueMixin.ts",
-    "src/vuetify/ConfirmDialog.vue",
-    "src/vuetify/dialog.ts",
-    "src/vuetify/form.ts"
+    "dist"
   ],
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build --format cjs,esm,umd --name toolbox -i src/index.ts",
+    "clean": "rm -rf dist build package",
+    "build": "npm run clean && npm run build-browser && npm run build-ts",
+    "build-ts": "tsc -p esbuild.tsconfig.json",
+    "buildtsdx": "tsdx build --format cjs,esm,umd --name toolbox -i src/index.ts",
+    "build-browser": "node build.js",
     "test": "tsdx lint src && tsdx test",
     "test:watch": "tsdx test --watch",
     "test:coverage": "tsdx test --coverage",
@@ -55,6 +48,8 @@
     "@size-limit/preset-small-lib": "^6.0.3",
     "@vue/compiler-sfc": "^3.2.20",
     "babel-core": "^7.0.0-bridge.0",
+    "esbuild": "^0.13.9",
+    "esbuild-plugin-vue": "^0.1.3",
     "husky": "^7.0.2",
     "jest": "^26.6.3",
     "node-sass": "^6.0.1",
@@ -79,10 +74,6 @@
     },
     {
       "path": "dist/toolbox.esm.js",
-      "limit": "7 kB"
-    },
-    {
-      "path": "dist/toolbox.umd.production.min.js",
       "limit": "7 kB"
     }
   ],
