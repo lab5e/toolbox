@@ -2,21 +2,23 @@
   "include": ["src", "shim.d.ts"],
   "files": ["shim.d.ts"],
   "compilerOptions": {
+    "target": "esnext",
     "module": "esnext",
-    "lib": ["dom", "esnext"],
-    "importHelpers": true,
-    "declaration": true,
-    "sourceMap": true,
-    "rootDir": "./src",
     "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
+    "outDir": "dist",
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "importHelpers": true,
     "moduleResolution": "node",
+    "experimentalDecorators": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "newLine": "lf",
+    "types": ["node", "vue", "jest"]
   }
 }

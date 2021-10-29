@@ -6,24 +6,24 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/ts/main.js",
-  "types": "dist/ts/index.d.ts",
-  "browser": "dist/browser.min.js",
+  "main": "dist/toolbox.js",
+  "browser": "dist/toolbox.esm.js",
+  "module": "dist/toolbox.esm.js",
+  "unpkg": "dist/toolbox.min.js",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "start": "tsdx watch",
-    "clean": "rm -rf dist build package",
-    "build": "npm run clean && npm run build-browser && npm run build-ts",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && rollup -c && tsc",
+    "build-esbuild": "npm run clean && npm run build-browser && npm run build-ts",
     "build-ts": "tsc -p esbuild.tsconfig.json",
-    "buildtsdx": "tsdx build --format cjs,esm,umd --name toolbox -i src/index.ts",
     "build-browser": "node build.js",
-    "test": "tsdx lint src && tsdx test",
-    "test:watch": "tsdx test --watch",
-    "test:coverage": "tsdx test --coverage",
+    "test": "eslint && jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "doc": "typedoc --out docs src/index.ts --exclude \"**/*.spec.ts\" --readme DOC.md",
-    "lint": "tsdx lint",
     "prepare": "npm run build",
     "size": "size-limit",
     "analyze": "size-limit --why"
@@ -43,29 +43,32 @@
     "node": ">=10"
   },
   "devDependencies": {
-    "@jest/console": "^27.3.1",
-    "@jest/test-result": "^27.3.1",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-typescript": "^7.15.0",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@size-limit/preset-small-lib": "^6.0.3",
-    "@vue/compiler-sfc": "^3.2.20",
-    "babel-core": "^7.0.0-bridge.0",
-    "esbuild": "^0.13.9",
-    "esbuild-plugin-vue": "^0.1.3",
+    "@types/jest": "^27.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.2.0",
+    "@typescript-eslint/parser": "^5.2.0",
+    "eslint": "^8.1.0",
+    "eslint-plugin-vue": "^8.0.1",
+    "eslint-plugin-vuetify": "^1.1.0",
     "husky": "^7.0.2",
-    "jest": "^26.6.3",
-    "node-sass": "^6.0.1",
+    "jest": "^27.3.1",
     "np": "^7.5.0",
-    "rollup-plugin-scss": "^3.0.0",
-    "rollup-plugin-vue": "^5.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^5.1.9",
     "size-limit": "^6.0.3",
-    "ts-jest": "^26.5.6",
-    "tsdx": "^0.14.1",
+    "ts-jest": "^27.0.7",
     "tslib": "^2.3.1",
     "typedoc": "^0.22.6",
     "typescript": "^4.4.4",
     "vue": "^2.6.14",
     "vue-jest": "^3.0.7",
-    "vue-template-compiler": "^2.6.14",
-    "vuetify": "^2.5.10"
+    "vuetify": "^2.5.0"
   },
   "size-limit": [
     {
@@ -79,7 +82,7 @@
   ],
   "peerDependencies": {
     "vue": "^2.0.0",
-    "vuetify": "^2.0.0"
+    "vuetify": "^2.5.0"
   },
   "peerDependenciesMeta": {
     "vue": {
